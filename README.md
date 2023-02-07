@@ -1,4 +1,3 @@
-# Final-Assignment
 # Import required libraries
 import pandas as pd
 import dash
@@ -96,12 +95,11 @@ app.layout = html.Div(children=[
                                         # TASK2: Add a dropdown
                                         # Enter your code below. Make sure you have correct formatting.
                                             dcc.Dropdown(id='input-type',options=[
-                         {'label': 'Yearly Airline Performance Report', 'value': 'OPT1'},
-                         {'label': 'Yearly Airline Delay Report', 'value': 'OPT2'}],
-                 placeholder='Select a report type',
-                 style={'width':'80%', 'padding':'3px', 'font-size': '20px', 'text-align-last' : 'center'}),
-        ],style={'disply':'flex'}),
-
+                                                                                 {'label': 'Yearly Airline Performance Report', 'value': 'OPT1'},
+                                                                                 {'label': 'Yearly Airline Delay Report', 'value': 'OPT2'}],
+                                                                         placeholder='Select a report type',
+                                                                         style={'width':'80%', 'padding':'3px', 'font-size': '20px', 'text-align-last' : 'center'}),
+                                                                
                                     # Place them next to each other using the division style
                                     ], style={'display':'flex'}),
                                     
@@ -131,13 +129,13 @@ app.layout = html.Div(children=[
                                         html.Div([ ], id='plot3')
                                 ], style={'display': 'flex'}),
                                 
-                                # TASK3: Add a division with two empty divisions inside. See above disvision for example.
-                                # Enter your code below. Make sure you have correct formatting.
-                                html.Div([
-                                        html.Div([ ], id='plot4'),
-                                        html.Div([ ], id='plot5')
-                                ], style={'display': 'flex'}),
-                                ])
+# TASK3: Add a division with two empty divisions inside. See above disvision for example.
+# Enter your code below. Make sure you have correct formatting.
+html.Div([
+     html.Div([ ], id='plot4'),
+     html.Div([ ], id='plot5')
+ ], style={'display': 'flex'}),
+])
 
 # Callback function definition
 # TASK4: Add 5 ouput components
@@ -195,8 +193,7 @@ def get_graph(chart, year, children1, children2, c3, c4, c5):
                         color='Flights', 
                         color_continuous_scale='RdBu',
                         title='Flight count by airline to destination state'
-                        )
-          
+                 )       
             
             # REVIEW6: Return dcc.Graph component to the empty division
             return [dcc.Graph(figure=tree_fig), 
@@ -227,3 +224,4 @@ def get_graph(chart, year, children1, children2, c3, c4, c5):
 # Run the app
 if __name__ == '__main__':
     app.run_server()
+
